@@ -1,4 +1,4 @@
-import { Drill, Menu, Phone, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navLinks = [
@@ -8,6 +8,9 @@ const navLinks = [
   { label: "Technology", href: "#technology" },
   { label: "Contact", href: "#contact" },
 ];
+
+const LOGO_PATH =
+  "/assets/gemini_generated_image_morbmomorbmomorb-019d585f-6696-760f-aa55-6d65fc5c3799.png";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,9 +44,11 @@ export function Navbar() {
             data-ocid="nav.link"
             aria-label="SB Drillers home"
           >
-            <div className="bg-brand-orange p-1.5 rounded">
-              <Drill className="h-5 w-5 text-white" />
-            </div>
+            <img
+              src={LOGO_PATH}
+              alt="SB Drillers Logo"
+              className="h-10 w-auto object-contain"
+            />
             <div className="flex flex-col leading-none">
               <span className="font-poppins font-800 text-lg tracking-wider text-brand-navy">
                 SB DRILLERS
