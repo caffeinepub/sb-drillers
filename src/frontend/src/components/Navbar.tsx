@@ -10,7 +10,7 @@ const navLinks = [
 ];
 
 const LOGO_PATH =
-  "/assets/gemini_generated_image_bd2no3bd2no3bd2n-019d636d-5c50-75b8-83e1-78a04fb617ca.png";
+  "/assets/img-20260406-wa0013-019d63bf-20bb-712f-b1ed-95352674b0c8.jpg";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -49,7 +49,7 @@ export function Navbar() {
             <img
               src={LOGO_PATH}
               alt="SB Drillers Logo"
-              className="h-12 lg:h-14 w-auto object-contain"
+              className="h-12 lg:h-14 w-auto object-contain rounded"
             />
             <div className="flex flex-col leading-none">
               <span className="font-display font-bold text-lg tracking-wider text-white">

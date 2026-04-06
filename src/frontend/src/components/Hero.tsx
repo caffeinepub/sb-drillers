@@ -2,7 +2,7 @@ import { CheckCircle, Phone } from "lucide-react";
 import { motion } from "motion/react";
 
 const LOGO_PATH =
-  "/assets/gemini_generated_image_bd2no3bd2no3bd2n-019d636d-5c50-75b8-83e1-78a04fb617ca.png";
+  "/assets/img-20260406-wa0013-019d63bf-20bb-712f-b1ed-95352674b0c8.jpg";
 
 export function Hero() {
   const scrollToContact = () => {
@@ -38,7 +38,7 @@ export function Hero() {
           <motion.img
             src={LOGO_PATH}
             alt="SB Drillers Logo"
-            className="h-28 md:h-36 w-auto object-contain mb-6 drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)]"
+            className="h-28 md:h-36 w-auto object-contain mb-6 drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)] rounded-lg"
             initial={{ opacity: 0, scale: 0.85 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -53,23 +53,34 @@ export function Hero() {
           </div>
 
           <h1
-            className="font-display font-extrabold text-white leading-tight mb-6"
+            className="font-display font-extrabold text-white leading-tight mb-3"
             style={{
               fontSize: "clamp(2.25rem, 5vw, 3.25rem)",
               lineHeight: 1.15,
             }}
           >
-            Your Trusted Borewell
-            <br />
+            SB Drillers
+          </h1>
+
+          {/* Tagline line: Expert Borewells | Since 1989 */}
+          <div className="flex flex-wrap items-center gap-3 mb-6">
             <span
-              className="text-brand-gold"
+              className="font-display font-bold text-brand-gold"
               style={{
+                fontSize: "clamp(1.25rem, 3vw, 1.75rem)",
                 textShadow: "0 0 32px oklch(0.73 0.16 73 / 0.45)",
               }}
             >
-              Experts Since 1989
+              Expert Borewells
             </span>
-          </h1>
+            <span className="text-white/40 text-2xl font-light">|</span>
+            <span
+              className="font-display font-bold text-white/90"
+              style={{ fontSize: "clamp(1.25rem, 3vw, 1.75rem)" }}
+            >
+              Since 1989
+            </span>
+          </div>
 
           <p className="text-white/85 text-lg mb-8 leading-relaxed max-w-xl font-body">
             Professional borewell drilling for agriculture, residential,
