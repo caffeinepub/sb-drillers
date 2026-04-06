@@ -35,7 +35,7 @@ export function FloatingContact() {
       >
         {/* Tooltip */}
         <motion.span
-          className="bg-gray-900 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-md pointer-events-none whitespace-nowrap"
+          className="bg-[oklch(0.10_0.03_240)] border border-white/15 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-md pointer-events-none whitespace-nowrap"
           initial={{ opacity: 0, x: 8 }}
           animate={{ opacity: waHovered ? 1 : 0, x: waHovered ? 0 : 8 }}
           transition={{ duration: 0.18 }}
@@ -76,7 +76,7 @@ export function FloatingContact() {
       >
         {/* Tooltip */}
         <motion.span
-          className="bg-gray-900 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-md pointer-events-none whitespace-nowrap"
+          className="bg-[oklch(0.10_0.03_240)] border border-white/15 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-md pointer-events-none whitespace-nowrap"
           initial={{ opacity: 0, x: 8 }}
           animate={{ opacity: callHovered ? 1 : 0, x: callHovered ? 0 : 8 }}
           transition={{ duration: 0.18 }}
@@ -89,7 +89,7 @@ export function FloatingContact() {
           href="tel:9441558989"
           aria-label="Call SB Drillers"
           data-ocid="floating_contact.call_button"
-          className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-orange-500 bg-brand-orange hover:bg-brand-orange-hover"
+          className="w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-brand-gold/20 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-gold bg-brand-gold hover:bg-brand-gold-hover"
           onMouseEnter={() => setCallHovered(true)}
           onMouseLeave={() => setCallHovered(false)}
           onFocus={() => setCallHovered(true)}
@@ -100,7 +100,10 @@ export function FloatingContact() {
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 400, damping: 18 }}
           >
-            <Phone className="w-6 h-6 text-white" strokeWidth={2.2} />
+            <Phone
+              className="w-6 h-6 text-[oklch(0.13_0.04_240)]"
+              strokeWidth={2.2}
+            />
           </motion.div>
         </a>
       </motion.div>

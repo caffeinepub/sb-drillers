@@ -16,8 +16,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        poppins: ["Poppins", "GeneralSans", "sans-serif"],
-        body: ["GeneralSans", "Poppins", "sans-serif"],
+        display: ["Playfair Display", "serif"],
+        body: ["Plus Jakarta Sans", "GeneralSans", "sans-serif"],
+        poppins: ["Plus Jakarta Sans", "GeneralSans", "sans-serif"],
       },
       colors: {
         border: "oklch(var(--border))",
@@ -74,10 +75,13 @@ export default {
         navy: "oklch(var(--navy))",
         "navy-dark": "oklch(var(--navy-dark))",
         brand: {
-          orange: "oklch(var(--orange))",
-          "orange-hover": "oklch(var(--orange-hover))",
+          gold: "oklch(var(--gold))",
+          "gold-hover": "oklch(var(--gold-hover))",
           navy: "oklch(var(--navy))",
           "navy-dark": "oklch(var(--navy-dark))",
+          /* Keep orange aliases pointing to gold for backwards compat */
+          orange: "oklch(var(--gold))",
+          "orange-hover": "oklch(var(--gold-hover))",
         },
       },
       borderRadius: {
@@ -86,9 +90,11 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       boxShadow: {
-        xs: "0 1px 2px 0 rgba(0,0,0,0.05)",
-        card: "0 2px 8px 0 rgba(15,42,61,0.10), 0 1px 2px 0 rgba(15,42,61,0.06)",
-        "card-hover": "0 8px 24px 0 rgba(15,42,61,0.16), 0 2px 4px 0 rgba(15,42,61,0.08)",
+        xs: "0 1px 2px 0 rgba(0,0,0,0.2)",
+        card: "0 2px 12px 0 rgba(0,0,0,0.35), 0 1px 3px 0 rgba(0,0,0,0.20)",
+        "card-hover": "0 8px 32px 0 oklch(0.73 0.16 73 / 0.15), 0 2px 8px 0 rgba(0,0,0,0.30)",
+        "gold-glow": "0 0 24px 0 oklch(0.73 0.16 73 / 0.30)",
+        "gold-glow-lg": "0 0 40px 0 oklch(0.73 0.16 73 / 0.25), 0 8px 32px 0 rgba(0,0,0,0.40)",
       },
       keyframes: {
         "accordion-down": {
@@ -103,11 +109,16 @@ export default {
           from: { opacity: "0", transform: "translateY(24px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "gold-shimmer": {
+          "0%": { backgroundPosition: "-200% center" },
+          "100%": { backgroundPosition: "200% center" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.5s ease-out forwards",
+        "gold-shimmer": "gold-shimmer 2.5s linear infinite",
       },
     },
   },

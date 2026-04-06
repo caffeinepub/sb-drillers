@@ -40,7 +40,14 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section
+      id="contact"
+      className="py-20"
+      style={{
+        background:
+          "linear-gradient(180deg, oklch(0.13 0.04 240) 0%, oklch(0.15 0.045 240) 100%)",
+      }}
+    >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -50,14 +57,14 @@ export function Contact() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-brand-orange font-semibold uppercase tracking-widest text-sm">
+          <span className="text-brand-gold font-semibold uppercase tracking-widest text-sm">
             Reach Us
           </span>
-          <h2 className="font-poppins font-extrabold text-foreground mt-2 text-3xl sm:text-4xl uppercase tracking-wide">
+          <h2 className="font-display font-extrabold text-white mt-2 text-3xl sm:text-4xl tracking-wide">
             Get In Touch
           </h2>
-          <div className="mt-4 mx-auto w-16 h-1 bg-brand-orange rounded" />
-          <p className="mt-5 text-muted-foreground max-w-xl mx-auto">
+          <div className="mt-4 mx-auto w-16 h-1 bg-brand-gold rounded" />
+          <p className="mt-5 text-white/65 max-w-xl mx-auto">
             Have a question or ready to drill? Contact us for a free site
             inspection — no obligation, no hidden charges.
           </p>
@@ -71,24 +78,21 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div
-              className="bg-brand-navy rounded-lg p-8 h-full"
-              style={{ background: "oklch(0.26 0.06 240)" }}
-            >
-              <h3 className="font-poppins font-bold text-white text-2xl mb-8">
+            <div className="bg-card border border-white/10 rounded-xl p-8 h-full shadow-card">
+              <h3 className="font-display font-bold text-white text-2xl mb-8">
                 Contact Information
               </h3>
 
               {/* Address */}
               <div className="flex gap-4 mb-8">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-brand-orange/20 flex items-center justify-center">
-                  <MapPin className="h-6 w-6 text-brand-orange" />
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-brand-gold/15 border border-brand-gold/25 flex items-center justify-center">
+                  <MapPin className="h-6 w-6 text-brand-gold" />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">
                     Our Location
                   </h4>
-                  <address className="text-white/70 text-sm not-italic leading-relaxed">
+                  <address className="text-white/65 text-sm not-italic leading-relaxed">
                     Near Indian Bank, Jaitra Hospital,
                     <br />
                     Pillar No 1, Chandra Nagar Main Road,
@@ -100,28 +104,28 @@ export function Contact() {
 
               {/* Phone */}
               <div className="flex gap-4 mb-10">
-                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-brand-orange/20 flex items-center justify-center">
-                  <Phone className="h-6 w-6 text-brand-orange" />
+                <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-brand-gold/15 border border-brand-gold/25 flex items-center justify-center">
+                  <Phone className="h-6 w-6 text-brand-gold" />
                 </div>
                 <div>
                   <h4 className="text-white font-semibold mb-1">Call Us</h4>
                   <a
                     href="tel:9441558989"
-                    className="text-brand-orange font-bold text-xl hover:text-white transition-colors"
+                    className="text-brand-gold font-bold text-xl hover:text-white transition-colors"
                     data-ocid="contact.link"
                   >
                     9441558989
                   </a>
-                  <p className="text-white/60 text-xs mt-1">
+                  <p className="text-white/50 text-xs mt-1">
                     Available Mon–Sat, 7am–7pm
                   </p>
                 </div>
               </div>
 
               {/* Badge */}
-              <div className="bg-brand-orange rounded-lg p-4 flex items-center gap-3">
-                <CheckCircle2 className="h-6 w-6 text-white flex-shrink-0" />
-                <p className="text-white text-sm font-medium">
+              <div className="bg-brand-gold/15 border border-brand-gold/30 rounded-xl p-4 flex items-center gap-3">
+                <CheckCircle2 className="h-6 w-6 text-brand-gold flex-shrink-0" />
+                <p className="text-white/85 text-sm font-medium">
                   Free site inspection — visit us or call now!
                 </p>
               </div>
@@ -140,19 +144,19 @@ export function Contact() {
                 className="h-full flex flex-col items-center justify-center text-center py-12"
                 data-ocid="contact.success_state"
               >
-                <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-6">
-                  <CheckCircle2 className="h-10 w-10 text-green-600" />
+                <div className="w-20 h-20 rounded-full bg-brand-gold/15 border border-brand-gold/30 flex items-center justify-center mb-6">
+                  <CheckCircle2 className="h-10 w-10 text-brand-gold" />
                 </div>
-                <h3 className="font-poppins font-bold text-foreground text-2xl mb-3">
+                <h3 className="font-display font-bold text-white text-2xl mb-3">
                   Enquiry Submitted!
                 </h3>
-                <p className="text-muted-foreground mb-6">
+                <p className="text-white/65 mb-6">
                   Thank you! Our team will contact you within 24 hours.
                 </p>
                 <button
                   type="button"
                   onClick={() => setSubmitted(false)}
-                  className="bg-brand-orange text-white font-semibold px-6 py-2.5 rounded hover:bg-brand-orange-hover transition-colors"
+                  className="bg-brand-gold hover:bg-brand-gold-hover text-[oklch(0.13_0.04_240)] font-bold px-6 py-2.5 rounded-lg transition-colors shadow-gold-glow"
                   data-ocid="contact.secondary_button"
                 >
                   Send Another Enquiry
@@ -161,13 +165,13 @@ export function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="bg-secondary rounded-lg p-8 flex flex-col gap-5"
+                className="bg-card border border-white/10 rounded-xl p-8 flex flex-col gap-5 shadow-card"
                 data-ocid="contact.panel"
               >
                 <div>
                   <Label
                     htmlFor="contact-name"
-                    className="text-sm font-semibold mb-1.5 block"
+                    className="text-white/75 text-sm font-semibold mb-1.5 block"
                   >
                     Full Name *
                   </Label>
@@ -178,7 +182,7 @@ export function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     required
-                    className="bg-white border-border"
+                    className="bg-background border-white/20 text-white placeholder:text-white/35 focus:border-brand-gold/60 focus:ring-brand-gold/20"
                     data-ocid="contact.input"
                   />
                 </div>
@@ -186,7 +190,7 @@ export function Contact() {
                 <div>
                   <Label
                     htmlFor="contact-email"
-                    className="text-sm font-semibold mb-1.5 block"
+                    className="text-white/75 text-sm font-semibold mb-1.5 block"
                   >
                     Email Address
                   </Label>
@@ -197,7 +201,7 @@ export function Contact() {
                     placeholder="your@email.com"
                     value={form.email}
                     onChange={handleChange}
-                    className="bg-white border-border"
+                    className="bg-background border-white/20 text-white placeholder:text-white/35 focus:border-brand-gold/60 focus:ring-brand-gold/20"
                     data-ocid="contact.input"
                   />
                 </div>
@@ -205,7 +209,7 @@ export function Contact() {
                 <div>
                   <Label
                     htmlFor="contact-phone"
-                    className="text-sm font-semibold mb-1.5 block"
+                    className="text-white/75 text-sm font-semibold mb-1.5 block"
                   >
                     Phone Number *
                   </Label>
@@ -217,7 +221,7 @@ export function Contact() {
                     value={form.phone}
                     onChange={handleChange}
                     required
-                    className="bg-white border-border"
+                    className="bg-background border-white/20 text-white placeholder:text-white/35 focus:border-brand-gold/60 focus:ring-brand-gold/20"
                     data-ocid="contact.input"
                   />
                 </div>
@@ -225,7 +229,7 @@ export function Contact() {
                 <div>
                   <Label
                     htmlFor="contact-message"
-                    className="text-sm font-semibold mb-1.5 block"
+                    className="text-white/75 text-sm font-semibold mb-1.5 block"
                   >
                     Message
                   </Label>
@@ -236,7 +240,7 @@ export function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     rows={4}
-                    className="bg-white border-border resize-none"
+                    className="bg-background border-white/20 text-white placeholder:text-white/35 focus:border-brand-gold/60 focus:ring-brand-gold/20 resize-none"
                     data-ocid="contact.textarea"
                   />
                 </div>
@@ -244,7 +248,7 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={mutation.isPending}
-                  className="mt-1 flex items-center justify-center gap-2 bg-brand-orange hover:bg-brand-orange-hover disabled:opacity-60 text-white font-bold uppercase tracking-wide px-6 py-3.5 rounded text-sm transition-all duration-200 shadow-md hover:shadow-lg"
+                  className="mt-1 flex items-center justify-center gap-2 bg-brand-gold hover:bg-brand-gold-hover disabled:opacity-60 text-[oklch(0.13_0.04_240)] font-bold uppercase tracking-wide px-6 py-3.5 rounded-lg text-sm transition-all duration-200 shadow-gold-glow hover:shadow-gold-glow-lg"
                   data-ocid="contact.submit_button"
                 >
                   {mutation.isPending ? (

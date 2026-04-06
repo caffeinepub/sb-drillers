@@ -49,8 +49,8 @@ function StarRating({ rating }: { rating: number }) {
           key={pos}
           className={`h-4 w-4 ${
             i < rating
-              ? "text-brand-orange fill-brand-orange"
-              : "text-gray-300 fill-gray-300"
+              ? "text-brand-gold fill-brand-gold"
+              : "text-white/20 fill-white/20"
           }`}
         />
       ))}
@@ -62,7 +62,11 @@ export function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-20 bg-secondary"
+      className="py-20"
+      style={{
+        background:
+          "linear-gradient(180deg, oklch(0.17 0.045 240) 0%, oklch(0.13 0.04 240) 100%)",
+      }}
       data-ocid="testimonials.section"
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,13 +78,13 @@ export function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-brand-orange font-semibold uppercase tracking-widest text-sm">
+          <span className="text-brand-gold font-semibold uppercase tracking-widest text-sm">
             Customer Reviews
           </span>
-          <h2 className="font-poppins font-extrabold text-brand-navy mt-2 text-3xl sm:text-4xl uppercase tracking-wide">
+          <h2 className="font-display font-extrabold text-white mt-2 text-3xl sm:text-4xl tracking-wide">
             What Our Customers Say
           </h2>
-          <div className="w-16 h-1 bg-brand-orange rounded mx-auto mt-4" />
+          <div className="w-16 h-1 bg-brand-gold rounded mx-auto mt-4" />
         </motion.div>
 
         {/* Cards grid */}
@@ -91,7 +95,7 @@ export function Testimonials() {
           {testimonials.map((t, i) => (
             <motion.div
               key={t.name}
-              className="bg-white rounded-xl shadow-card border border-border p-6 flex flex-col relative overflow-hidden"
+              className="bg-card rounded-xl shadow-card border border-white/10 p-6 flex flex-col relative overflow-hidden hover:border-brand-gold/25 hover:shadow-card-hover transition-all duration-300"
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
@@ -100,7 +104,7 @@ export function Testimonials() {
             >
               {/* Decorative quote icon */}
               <Quote
-                className="absolute top-4 right-4 h-9 w-9 text-brand-orange opacity-15"
+                className="absolute top-4 right-4 h-9 w-9 text-brand-gold opacity-20"
                 aria-hidden="true"
               />
 
@@ -108,22 +112,22 @@ export function Testimonials() {
               <StarRating rating={t.rating} />
 
               {/* Quote text */}
-              <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-5">
+              <p className="text-white/70 text-sm leading-relaxed flex-1 mb-5">
                 &ldquo;{t.quote}&rdquo;
               </p>
 
               {/* Customer info */}
-              <div className="flex items-center gap-3 pt-4 border-t border-border">
-                <div className="flex-shrink-0 w-9 h-9 rounded-full bg-brand-navy flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">
+              <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                <div className="flex-shrink-0 w-9 h-9 rounded-full bg-brand-gold/20 border border-brand-gold/30 flex items-center justify-center">
+                  <span className="text-brand-gold font-bold text-sm">
                     {t.name.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <p className="font-semibold text-brand-navy text-sm leading-tight">
+                  <p className="font-semibold text-white text-sm leading-tight">
                     {t.name}
                   </p>
-                  <p className="text-muted-foreground text-xs">{t.location}</p>
+                  <p className="text-white/50 text-xs">{t.location}</p>
                 </div>
               </div>
             </motion.div>

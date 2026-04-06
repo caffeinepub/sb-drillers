@@ -23,8 +23,11 @@ export function WhyChooseUs() {
   return (
     <section
       id="about"
-      className="py-20 bg-navy-dark"
-      style={{ background: "oklch(0.19 0.055 240)" }}
+      className="py-20"
+      style={{
+        background:
+          "linear-gradient(180deg, oklch(0.15 0.045 240) 0%, oklch(0.13 0.04 240) 100%)",
+      }}
     >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -35,14 +38,14 @@ export function WhyChooseUs() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <span className="text-brand-orange font-semibold uppercase tracking-widest text-sm">
+          <span className="text-brand-gold font-semibold uppercase tracking-widest text-sm">
             Our Advantages
           </span>
-          <h2 className="font-poppins font-extrabold text-white mt-2 text-3xl sm:text-4xl uppercase tracking-wide">
+          <h2 className="font-display font-extrabold text-white mt-2 text-3xl sm:text-4xl tracking-wide">
             Why Choose SB Drillers?
           </h2>
-          <div className="mt-4 mx-auto w-16 h-1 bg-brand-orange rounded" />
-          <p className="mt-5 text-white/70 max-w-xl mx-auto">
+          <div className="mt-4 mx-auto w-16 h-1 bg-brand-gold rounded" />
+          <p className="mt-5 text-white/65 max-w-xl mx-auto">
             Three decades of trust, proven expertise, and the latest technology
             — delivering groundwater solutions that last a lifetime.
           </p>
@@ -58,20 +61,20 @@ export function WhyChooseUs() {
             return (
               <motion.div
                 key={feat.title}
-                className="bg-white/5 border border-white/10 rounded-lg p-8 text-center hover:bg-white/10 transition-colors duration-300"
+                className="bg-white/5 border border-white/10 rounded-xl p-8 text-center hover:bg-white/8 hover:border-brand-gold/30 transition-all duration-300"
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 data-ocid={`whychoose.item.${i + 1}`}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-orange/20 mb-6">
-                  <Icon className="h-8 w-8 text-brand-orange" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-gold/15 border border-brand-gold/25 mb-6">
+                  <Icon className="h-8 w-8 text-brand-gold" />
                 </div>
-                <h3 className="font-poppins font-bold text-white text-xl mb-3">
+                <h3 className="font-display font-bold text-white text-xl mb-3">
                   {feat.title}
                 </h3>
-                <p className="text-white/65 text-sm leading-relaxed">
+                <p className="text-white/60 text-sm leading-relaxed">
                   {feat.desc}
                 </p>
               </motion.div>

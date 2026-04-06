@@ -1,12 +1,32 @@
-import { Award, Drill, ThumbsUp, Truck } from "lucide-react";
+import { Award, CheckCircle, Drill, Truck } from "lucide-react";
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { icon: Award, target: 30, suffix: "+", label: "Years Experience" },
-  { icon: Drill, target: 2, suffix: " Lakh+", label: "Borewells Drilled" },
-  { icon: Truck, target: 10, suffix: "+", label: "Drilling Vehicles" },
-  { icon: ThumbsUp, target: 100, suffix: "%", label: "Client Satisfaction" },
+  {
+    icon: Award,
+    label: "Years Experience",
+    target: 35,
+    suffix: "+",
+  },
+  {
+    icon: Drill,
+    label: "Borewells Drilled",
+    target: 200000,
+    suffix: "+",
+  },
+  {
+    icon: Truck,
+    label: "Drilling Vehicles",
+    target: 10,
+    suffix: "+",
+  },
+  {
+    icon: CheckCircle,
+    label: "Customer Satisfaction",
+    target: 100,
+    suffix: "%",
+  },
 ];
 
 function useCountUp(
@@ -20,10 +40,8 @@ function useCountUp(
   useEffect(() => {
     if (!triggered) return;
 
-    let timeoutId: ReturnType<typeof setTimeout>;
     let rafId: number;
-
-    timeoutId = setTimeout(() => {
+    const timeoutId = setTimeout(() => {
       const startTime = performance.now();
 
       const tick = (now: number) => {
@@ -62,9 +80,14 @@ function StatCounter({
   triggered: boolean;
 }) {
   const count = useCountUp(target, 2000, delay, triggered);
+  const displayValue =
+    target >= 10000 ? `${(count / 100000).toFixed(1)}L` : count.toString();
   return (
-    <span className="font-poppins font-extrabold text-brand-orange text-4xl leading-none mb-2">
-      {count}
+    <span
+      className="font-display font-extrabold text-brand-gold text-4xl leading-none mb-2"
+      style={{ textShadow: "0 0 20px oklch(0.73 0.16 73 / 0.4)" }}
+    >
+      {displayValue}
       {suffix}
     </span>
   );
@@ -93,8 +116,17 @@ export function Stats() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-16 bg-brand-navy">
+    <section
+      ref={sectionRef}
+      className="py-16"
+      style={{
+        background:
+          "linear-gradient(135deg, oklch(0.13 0.04 240) 0%, oklch(0.17 0.05 250) 100%)",
+      }}
+    >
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Thin gold divider */}
+        <div className="w-24 h-px bg-brand-gold/30 mx-auto mb-12" />
         <div
           className="grid grid-cols-2 lg:grid-cols-4 gap-8"
           data-ocid="stats.list"
@@ -111,8 +143,8 @@ export function Stats() {
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 data-ocid={`stats.item.${i + 1}`}
               >
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-orange/20 mb-4">
-                  <Icon className="h-7 w-7 text-brand-orange" />
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-brand-gold/15 border border-brand-gold/25 mb-4">
+                  <Icon className="h-7 w-7 text-brand-gold" />
                 </div>
                 <StatCounter
                   target={stat.target}
@@ -120,13 +152,14 @@ export function Stats() {
                   delay={i * 150}
                   triggered={triggered}
                 />
-                <span className="text-white/80 font-medium text-sm uppercase tracking-wide">
+                <span className="text-white/75 font-medium text-sm uppercase tracking-wide">
                   {stat.label}
                 </span>
               </motion.div>
             );
           })}
         </div>
+        <div className="w-24 h-px bg-brand-gold/30 mx-auto mt-12" />
       </div>
     </section>
   );

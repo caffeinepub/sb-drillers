@@ -3,6 +3,20 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: "Playfair Display";
+  src: url("/assets/fonts/PlayfairDisplay.woff2") format("woff2");
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "GeneralSans";
   src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
   font-weight: 200 700;
@@ -11,97 +25,66 @@
 
 @layer base {
   :root {
-    /* SB Drillers - Navy + Orange industrial palette */
-    --radius: 0.5rem;
+    /* SB Drillers — Deep Navy + Warm Gold Premium Palette */
+    --radius: 0.625rem;
 
-    /* Background: white */
-    --background: 1 0 0;
-    --foreground: 0.13 0.015 250;
+    /* Background: deep near-black navy */
+    --background: 0.13 0.04 240;
+    --foreground: 0.97 0.01 80;
 
-    /* Cards */
-    --card: 1 0 0;
-    --card-foreground: 0.13 0.015 250;
-    --popover: 1 0 0;
-    --popover-foreground: 0.13 0.015 250;
+    /* Cards: slightly lighter navy */
+    --card: 0.17 0.045 240;
+    --card-foreground: 0.97 0.01 80;
+    --popover: 0.17 0.045 240;
+    --popover-foreground: 0.97 0.01 80;
 
-    /* Primary: navy #0F2A3D → oklch ~0.26 0.06 240 */
-    --primary: 0.26 0.06 240;
-    --primary-foreground: 1 0 0;
+    /* Primary: warm gold */
+    --primary: 0.73 0.16 73;
+    --primary-foreground: 0.13 0.04 240;
 
-    /* Secondary: light gray #F3F4F6 → oklch ~0.96 0 0 */
-    --secondary: 0.96 0 0;
-    --secondary-foreground: 0.26 0.06 240;
+    /* Secondary: dark navy */
+    --secondary: 0.19 0.05 240;
+    --secondary-foreground: 0.97 0.01 80;
 
     /* Muted */
-    --muted: 0.96 0 0;
-    --muted-foreground: 0.45 0.01 250;
+    --muted: 0.19 0.05 240;
+    --muted-foreground: 0.7 0.02 80;
 
-    /* Accent: orange #F28C28 → oklch ~0.72 0.17 54 */
-    --accent: 0.72 0.17 54;
-    --accent-foreground: 1 0 0;
+    /* Accent: warm gold */
+    --accent: 0.73 0.16 73;
+    --accent-foreground: 0.13 0.04 240;
 
     /* Destructive */
     --destructive: 0.577 0.245 27.325;
     --destructive-foreground: 0.985 0 0;
 
     /* Borders */
-    --border: 0.91 0.005 250;
-    --input: 0.91 0.005 250;
-    --ring: 0.72 0.17 54;
+    --border: 1 0 0 / 12%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.73 0.16 73;
 
     /* Brand tokens */
-    --navy: 0.26 0.06 240;
-    --navy-dark: 0.19 0.055 240;
-    --orange: 0.72 0.17 54;
-    --orange-hover: 0.67 0.18 54;
-    --gray-light: 0.96 0 0;
+    --gold: 0.73 0.16 73;
+    --gold-hover: 0.68 0.17 73;
+    --navy: 0.19 0.05 240;
+    --navy-dark: 0.13 0.04 240;
 
     /* Charts */
-    --chart-1: 0.72 0.17 54;
-    --chart-2: 0.26 0.06 240;
+    --chart-1: 0.73 0.16 73;
+    --chart-2: 0.19 0.05 240;
     --chart-3: 0.6 0.118 184;
     --chart-4: 0.828 0.189 84;
     --chart-5: 0.769 0.188 70;
 
     /* Sidebar */
-    --sidebar: 0.26 0.06 240;
-    --sidebar-foreground: 1 0 0;
-    --sidebar-primary: 0.72 0.17 54;
-    --sidebar-primary-foreground: 1 0 0;
-    --sidebar-accent: 0.32 0.06 240;
-    --sidebar-accent-foreground: 1 0 0;
+    --sidebar: 0.15 0.045 240;
+    --sidebar-foreground: 0.97 0.01 80;
+    --sidebar-primary: 0.73 0.16 73;
+    --sidebar-primary-foreground: 0.13 0.04 240;
+    --sidebar-accent: 0.19 0.05 240;
+    --sidebar-accent-foreground: 0.97 0.01 80;
     --sidebar-border: 1 0 0 / 10%;
-    --sidebar-ring: 0.72 0.17 54;
-  }
-
-  .dark {
-    --background: 0.19 0.055 240;
-    --foreground: 0.97 0 0;
-    --card: 0.24 0.06 240;
-    --card-foreground: 0.97 0 0;
-    --popover: 0.24 0.06 240;
-    --popover-foreground: 0.97 0 0;
-    --primary: 0.72 0.17 54;
-    --primary-foreground: 1 0 0;
-    --secondary: 0.28 0.06 240;
-    --secondary-foreground: 0.97 0 0;
-    --muted: 0.28 0.06 240;
-    --muted-foreground: 0.65 0.02 250;
-    --accent: 0.72 0.17 54;
-    --accent-foreground: 1 0 0;
-    --destructive: 0.704 0.191 22.216;
-    --destructive-foreground: 0.985 0 0;
-    --border: 1 0 0 / 10%;
-    --input: 1 0 0 / 15%;
-    --ring: 0.72 0.17 54;
-    --sidebar: 0.19 0.055 240;
-    --sidebar-foreground: 0.97 0 0;
-    --sidebar-primary: 0.72 0.17 54;
-    --sidebar-primary-foreground: 1 0 0;
-    --sidebar-accent: 0.24 0.06 240;
-    --sidebar-accent-foreground: 0.97 0 0;
-    --sidebar-border: 1 0 0 / 10%;
-    --sidebar-ring: 0.72 0.17 54;
+    --sidebar-ring: 0.73 0.16 73;
   }
 
   * {
@@ -114,6 +97,6 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: "Poppins", "GeneralSans", sans-serif;
+    font-family: "Plus Jakarta Sans", "GeneralSans", sans-serif;
   }
 }

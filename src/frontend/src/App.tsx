@@ -12,13 +12,13 @@ import { Toaster } from "@/components/ui/sonner";
 
 export default function App() {
   return (
-    <div className="font-poppins">
-      <Toaster position="top-right" richColors />
+    <div className="font-body">
+      <Toaster />
       <Navbar />
       <main>
         <Hero />
-        <Services />
         <Stats />
+        <Services />
         <WhyChooseUs />
         <Technology />
         <Testimonials />
